@@ -1,0 +1,66 @@
+Act as a Senior Frontend Developer and UI/UX Designer.
+
+Project: Create a high-converting, professional, static landing page for a Tutoring Center (Centro de Explicações) in Portugal.
+Tech Stack: React, Tailwind CSS, Lucide React (icons), and Framer Motion (for scroll animations).
+Deployment Target: Netlify (Static export).
+
+**Goal:** Attract new students/parents and get them to book a session via WhatsApp or the Contact Form.
+
+**Design "Vibe":**
+- Professional, academic, trustworthy, and welcoming.
+- Color Palette: Navy Blue (trust), Clean White (clarity), and Soft Gold (excellence).
+- Typography: Clean sans-serif fonts (e.g., Inter or Poppins).
+- Animations: Smooth fade-in and slide-up animations on scroll for all sections.
+
+**Content & Structure (Single Page Scroll):**
+
+1. **Header (Navbar):**
+   - Logo text: "Diana Pimentel - Centro de Explicações".
+   - Links: Sobre, Serviços, Espaço, Testemunhos, Contactos.
+   - CTA Button: "Marcar Aula" (Links to WhatsApp).
+
+2. **Hero Section:**
+   - Headline: "Mais de 10 Anos a Construir Sucesso Escolar."
+   - Subheadline: "Apoio personalizado desde o 1.º Ciclo até ao Ensino Superior. Especialistas em Português, Matemática e Ciências."
+   - CTA Button: "Começar Agora" (Scrolls to contacts).
+   - Background: Clean, abstract academic pattern or a placeholder for a high-quality photo of a study environment.
+
+3. **About Section ("A Nossa Experiência"):**
+   - Highlight: "Liderado por uma explicadora com mais de 10 anos de experiência."
+   - Text: "Focamo-nos em métodos de estudo e preparação intensiva para Exames Nacionais num ambiente calmo e profissional."
+
+4. **Services Section (Cards with Icons):**
+   - Card 1: "Língua Portuguesa" -> "Especialização completa desde o Básico até ao Ensino Superior e Teses."
+   - Card 2: "Matemática" -> "Explicador dedicado exclusivamente a Matemática para máximo rigor."
+   - Card 3: "Ciências & Biologia" -> "Apoio sólido a Físico-Química e Biologia até ao Secundário."
+   - Card 4: "Preparações" -> "Treino intensivo para Exames Nacionais e Frequências."
+
+5. **Gallery Section ("O Nosso Espaço"):**
+   - A grid layout for photos. Use placeholders (via Unsplash) depicting a clean classroom/study room, books, and students studying.
+   - Mention "Sala 212 - Edifício América".
+
+6. **Testimonials Section ("O que dizem os alunos"):**
+   - 3 beautiful cards with placeholder text for student reviews. Include 5-star icons.
+
+7. **Location Section:**
+   - Text Address: "Edifício América, Rua 1.º de Maio, 2.º Andar, Sala 212, Trofa".
+   - Google Maps Embed: Create a visual container for the map iframe. (Use a placeholder iframe focusing on Trofa, Portugal for now).
+
+8. **Contact Section (Crucial):**
+   - **Form:** Must use `<form name="contact" method="POST" data-netlify="true">`. Fields: Nome, Email, Telemóvel, Disciplina/Assunto, Mensagem.
+   - **Contact Info Display:**
+     - Phone: "+351 919 977 198" (Clickable tel: link).
+     - Instagram: Link to "https://www.instagram.com/diana_pimentel_explicadora?igsh=MXB6cWN0MmRxN2Y1aw==".
+     - WhatsApp: Link to "https://wa.me/351919977198".
+
+9. **Footer:**
+   - Copyright 2024 Diana Pimentel.
+   - Social Media Icons.
+
+**Specific Features needed:**
+- **Floating WhatsApp Button:** A fixed green WhatsApp icon on the bottom right corner of the screen that opens the WhatsApp link above.
+- **Responsiveness:** Must look perfect on Mobile and Desktop.
+- **SEO:** Include meta tags for "Explicações Trofa", "Explicadora Português", "Preparação Exames".
+
+**Deliverable:**
+Provide the full code structure. If using React, provide the App.jsx, components, and Tailwind config. Ensure the code is ready to run.

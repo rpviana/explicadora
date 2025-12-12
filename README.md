@@ -140,3 +140,4 @@ WebflowForge/
 ## 📄 Licença
 
 MIT
+# explicadora

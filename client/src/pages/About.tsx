@@ -3,31 +3,32 @@ import { AnimatedSection, StaggerChildren, StaggerItem } from "@/components/ui/a
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { 
-  GraduationCap, 
-  Heart, 
-  Target, 
-  Users, 
-  Award, 
-  BookOpen, 
+import {
+  GraduationCap,
+  Heart,
+  Target,
+  Users,
+  Award,
+  BookOpen,
   Lightbulb,
   CheckCircle,
   ArrowRight
 } from "lucide-react";
+import fotoExplicadora from "@assets/foto-explicadora.jpeg";
 
 const timelineItems = [
   {
     year: "2014",
     title: "Início da Jornada",
-    description: "Começou a dar explicações particulares, descobrindo a paixão pelo ensino personalizado.",
+    description: "Começou a dar explicações particulares em casa, descobrindo a paixão pelo ensino personalizado.",
   },
   {
-    year: "2017",
+    year: "2019",
     title: "Expansão dos Serviços",
     description: "Ampliação para novas disciplinas e níveis de ensino, do 1.º Ciclo ao Secundário.",
   },
   {
-    year: "2020",
+    year: "2022",
     title: "Centro de Explicações",
     description: "Abertura do espaço dedicado na Sala 212, Edifício América, com ambiente profissional.",
   },
@@ -75,7 +76,7 @@ export default function About() {
     <Layout>
       <section className="relative py-20 lg:py-28 bg-gradient-to-br from-primary via-primary to-primary/95 overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0djItSDI0di0yaDEyek0zNiAzMHYySDI0di0yaDEyem0wLTR2MkgyNHYtMmgxMnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-50" />
-        
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center max-w-3xl mx-auto">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 text-accent text-sm font-medium mb-6" data-testid="badge-about-hero">
@@ -86,7 +87,7 @@ export default function About() {
               Sobre Nós
             </h1>
             <p className="text-lg text-primary-foreground/80 leading-relaxed">
-              Conheça a história do Centro de Explicações Diana Pimentel e descubra 
+              Conheça a história do Centro de Explicações Diana Pimentel e descubra
               o que nos torna diferentes.
             </p>
           </AnimatedSection>
@@ -95,24 +96,14 @@ export default function About() {
 
       <section className="py-16 lg:py-24 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
             <AnimatedSection direction="left">
-              <div className="relative">
-                <div className="aspect-[4/3] rounded-md bg-muted overflow-hidden">
-                  <div className="w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                    <div className="text-center p-8">
-                      <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                        <GraduationCap className="h-12 w-12 text-primary" />
-                      </div>
-                      <h3 className="text-xl font-semibold text-foreground mb-2">Diana Pimentel</h3>
-                      <p className="text-muted-foreground">Fundadora e Explicadora Principal</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute -bottom-4 -right-4 p-4 bg-accent rounded-md shadow-lg">
-                  <div className="text-3xl font-bold text-accent-foreground">10+</div>
-                  <div className="text-sm text-accent-foreground/80">Anos</div>
-                </div>
+              <div className="aspect-[9/16] w-64 mx-auto lg:mx-0 lg:ml-auto rounded-lg overflow-hidden shadow-xl">
+                <img
+                  src={fotoExplicadora}
+                  alt="Diana Pimentel - Explicadora"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </AnimatedSection>
 
@@ -122,20 +113,22 @@ export default function About() {
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  <strong className="text-foreground">Liderado por uma explicadora com mais de 10 anos de experiência</strong>, 
-                  o Centro de Explicações Diana Pimentel nasceu da paixão pelo ensino e do desejo 
-                  de fazer a diferença na vida académica dos alunos.
+                  <strong className="text-foreground">Tudo começou em 2014, na simplicidade de casa</strong>,
+                  com a paixão pelo ensino e o desejo genuíno de ajudar os alunos a alcançarem
+                  o seu potencial máximo. O que era apenas uma sala transformou-se numa verdadeira
+                  missão de vida.
                 </p>
                 <p>
-                  Focamo-nos em <strong className="text-foreground">métodos de estudo personalizados</strong> e 
-                  preparação intensiva para Exames Nacionais num ambiente calmo e profissional. 
-                  Cada aluno recebe atenção individualizada, com planos de estudo adaptados 
-                  às suas necessidades específicas.
+                  Com o passar dos anos e o <strong className="text-foreground">reconhecimento do trabalho dedicado</strong>,
+                  a procura cresceu naturalmente. Os resultados positivos dos alunos e as recomendações
+                  de famílias satisfeitas levaram à expansão dos serviços em 2019, abrangendo mais
+                  disciplinas e níveis de ensino.
                 </p>
                 <p>
-                  Ao longo dos anos, temos ajudado centenas de alunos a alcançar os seus 
-                  objetivos académicos, desde o 1.º Ciclo até ao Ensino Superior, incluindo 
-                  apoio na elaboração de teses e trabalhos académicos.
+                  Em 2022, devido ao crescimento contínuo e ao compromisso com a excelência,
+                  nasceu o <strong className="text-foreground">Centro de Explicações Diana Pimentel</strong> na
+                  Sala 212 do Edifício América. Um espaço profissional e acolhedor, pensado para
+                  proporcionar as melhores condições de aprendizagem aos nossos alunos.
                 </p>
               </div>
 
@@ -165,7 +158,7 @@ export default function About() {
 
           <div className="relative">
             <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border hidden md:block" />
-            
+
             <StaggerChildren className="space-y-8">
               {timelineItems.map((item, index) => (
                 <StaggerItem key={index}>
@@ -179,9 +172,9 @@ export default function About() {
                         </CardContent>
                       </Card>
                     </div>
-                    
+
                     <div className="hidden md:flex items-center justify-center w-4 h-4 rounded-full bg-accent z-10" />
-                    
+
                     <div className="flex-1 hidden md:block" />
                   </div>
                 </StaggerItem>
@@ -228,10 +221,10 @@ export default function About() {
                 O Que Nos Diferencia
               </h2>
               <p className="text-muted-foreground mb-8 leading-relaxed">
-                No Centro de Explicações Diana Pimentel, oferecemos uma experiência de aprendizagem 
+                No Centro de Explicações Diana Pimentel, oferecemos uma experiência de aprendizagem
                 única, focada no sucesso individual de cada aluno.
               </p>
-              
+
               <ul className="space-y-4">
                 {differentials.map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
@@ -250,7 +243,7 @@ export default function About() {
                     <h3 className="text-2xl font-bold">Taxa de Sucesso de 95%</h3>
                   </div>
                   <p className="text-primary-foreground/80 mb-6 leading-relaxed">
-                    Os nossos alunos alcançam consistentemente os seus objetivos académicos, 
+                    Os nossos alunos alcançam consistentemente os seus objetivos académicos,
                     seja melhorar notas, passar nos exames ou entrar na universidade.
                   </p>
                   <a href="https://wa.me/351919977198" target="_blank" rel="noopener noreferrer">

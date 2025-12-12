@@ -1,0 +1,35 @@
+# Build configuration
+[build]
+  # Directory with the serverless functions
+  functions = "netlify/functions"
+  
+  # Build command - builds both client and server
+  command = "npm run build"
+  
+  # Directory to publish (frontend build output)
+  publish = "dist/public"
+
+# Redirect rules for SPA (Single Page Application)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false
+  
+  # Don't redirect API calls or static assets
+  conditions = {Role = ["admin"]}
+
+# Environment variables (configure these in Netlify dashboard)
+# Required variables:
+# - DATABASE_URL: PostgreSQL connection string
+# - NODE_ENV: production
+# - PORT: 5000 (or as needed)
+
+# Headers for security
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-XSS-Protection = "1; mode=block"

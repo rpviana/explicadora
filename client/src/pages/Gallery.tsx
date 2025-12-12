@@ -3,9 +3,9 @@ import { Layout } from "@/components/layout/Layout";
 import { AnimatedSection, StaggerChildren, StaggerItem } from "@/components/ui/animated-section";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { 
-  GraduationCap, 
-  MapPin, 
+import {
+  GraduationCap,
+  MapPin,
   Building2,
   BookOpen,
   Users,
@@ -28,12 +28,6 @@ const galleryImages = [
     description: "Ambiente calmo e profissional para aprendizagem",
   },
   {
-    id: 2,
-    category: "space",
-    title: "Área de Receção",
-    description: "Espaço acolhedor para alunos e pais",
-  },
-  {
     id: 3,
     category: "classes",
     title: "Aula Individual",
@@ -44,24 +38,6 @@ const galleryImages = [
     category: "materials",
     title: "Material Didático",
     description: "Recursos actualizados e organizados",
-  },
-  {
-    id: 5,
-    category: "space",
-    title: "Secretária de Trabalho",
-    description: "Espaço de trabalho ergonómico",
-  },
-  {
-    id: 6,
-    category: "classes",
-    title: "Preparação para Exames",
-    description: "Sessões focadas e intensivas",
-  },
-  {
-    id: 7,
-    category: "materials",
-    title: "Biblioteca de Apoio",
-    description: "Livros e manuais de consulta",
   },
   {
     id: 8,
@@ -75,8 +51,8 @@ export default function Gallery() {
   const [activeCategory, setActiveCategory] = useState("all");
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
-  const filteredImages = activeCategory === "all" 
-    ? galleryImages 
+  const filteredImages = activeCategory === "all"
+    ? galleryImages
     : galleryImages.filter(img => img.category === activeCategory);
 
   const getGradientColor = (id: number) => {
@@ -97,7 +73,7 @@ export default function Gallery() {
     <Layout>
       <section className="relative py-20 lg:py-28 bg-gradient-to-br from-primary via-primary to-primary/95 overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0djItSDI0di0yaDEyek0zNiAzMHYySDI0di0yaDEyem0wLTR2MkgyNHYtMmgxMnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-50" />
-        
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center max-w-3xl mx-auto">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 text-accent text-sm font-medium mb-6" data-testid="badge-gallery-hero">
@@ -108,7 +84,7 @@ export default function Gallery() {
               O Nosso Espaço
             </h1>
             <p className="text-lg text-primary-foreground/80 leading-relaxed">
-              Conheça as instalações do Centro de Explicações Diana Pimentel, 
+              Conheça as instalações do Centro de Explicações Diana Pimentel,
               um ambiente pensado para a aprendizagem.
             </p>
           </AnimatedSection>
@@ -136,7 +112,7 @@ export default function Gallery() {
 
       <section className="py-16 lg:py-24 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
             layout
           >
@@ -150,7 +126,7 @@ export default function Gallery() {
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <Card 
+                  <Card
                     className="group cursor-pointer overflow-hidden hover-elevate"
                     onClick={() => setSelectedImage(image.id)}
                     data-testid={`card-gallery-${image.id}`}
@@ -205,7 +181,7 @@ export default function Gallery() {
                         Edifício América<br />
                         Rua 1.º de Maio<br />
                         2.º Andar, Sala 212<br />
-                        4785-000 Trofa, Portugal
+                        4785-353 Trofa, Portugal
                       </p>
                     </div>
                   </div>
@@ -217,17 +193,17 @@ export default function Gallery() {
                     <div>
                       <h3 className="text-xl font-semibold text-foreground mb-2">Sobre o Espaço</h3>
                       <p className="text-muted-foreground leading-relaxed">
-                        O nosso centro está localizado num edifício moderno, 
-                        com fácil acesso e estacionamento nas proximidades. 
-                        As instalações foram pensadas para proporcionar um 
+                        O nosso centro está localizado num edifício moderno,
+                        com fácil acesso e estacionamento nas proximidades.
+                        As instalações foram pensadas para proporcionar um
                         ambiente calmo e propício à aprendizagem.
                       </p>
                     </div>
                   </div>
 
-                  <a 
-                    href="https://maps.google.com/?q=Trofa,Portugal" 
-                    target="_blank" 
+                  <a
+                    href="https://maps.google.com/?q=Trofa,Portugal"
+                    target="_blank"
                     rel="noopener noreferrer"
                   >
                     <Button className="gap-2" data-testid="button-directions">

@@ -6,10 +6,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { 
-  Phone, 
-  Mail, 
-  MapPin, 
+import {
+  Phone,
+  Mail,
+  MapPin,
   Clock,
   MessageCircle,
   Send,
@@ -46,14 +46,26 @@ const contactMethods = [
 
 const officeHours = [
   { day: "Segunda a Sexta", hours: "09:00 - 20:00" },
-  { day: "Sábado", hours: "09:00 - 13:00" },
-  { day: "Domingo", hours: "Encerrado" },
+  { day: "Sábado", hours: "Sob-consulta" },
+  { day: "Domingo", hours: "Sob-consulta" },
 ];
 
 export default function Contact() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const formatPhoneNumber = (value: string) => {
+    const numbers = value.replace(/\D/g, '');
+    if (numbers.length <= 3) return numbers;
+    if (numbers.length <= 6) return `${numbers.slice(0, 3)} ${numbers.slice(3)}`;
+    return `${numbers.slice(0, 3)} ${numbers.slice(3, 6)} ${numbers.slice(6, 9)}`;
+  };
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const formatted = formatPhoneNumber(e.target.value);
+    e.target.value = formatted;
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -63,18 +75,10 @@ export default function Contact() {
     const formData = new FormData(form);
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("/", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: formData.get("name"),
-          email: formData.get("email"),
-          phone: formData.get("phone"),
-          subject: formData.get("subject"),
-          message: formData.get("message"),
-        }),
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData as any).toString(),
       });
 
       if (response.ok) {
@@ -102,7 +106,7 @@ export default function Contact() {
     <Layout>
       <section className="relative py-20 lg:py-28 bg-gradient-to-br from-primary via-primary to-primary/95 overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0djItSDI0di0yaDEyek0zNiAzMHYySDI0di0yaDEyem0wLTR2MkgyNHYtMmgxMnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-50" />
-        
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center max-w-3xl mx-auto">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 text-accent text-sm font-medium mb-6" data-testid="badge-contact-hero">
@@ -113,7 +117,7 @@ export default function Contact() {
               Contactos
             </h1>
             <p className="text-lg text-primary-foreground/80 leading-relaxed">
-              Estamos disponíveis para esclarecer todas as suas dúvidas 
+              Estamos disponíveis para esclarecer todas as suas dúvidas
               e ajudá-lo a iniciar o caminho para o sucesso escolar.
             </p>
           </AnimatedSection>
@@ -146,39 +150,36 @@ export default function Contact() {
                         </Button>
                       </div>
                     ) : (
-                      <form onSubmit={handleSubmit} className="space-y-6">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                          <div className="space-y-2">
-                            <Label htmlFor="name">Nome *</Label>
-                            <Input
-                              id="name"
-                              name="name"
-                              placeholder="O seu nome"
-                              required
-                              data-testid="input-name"
-                            />
-                          </div>
-                          <div className="space-y-2">
-                            <Label htmlFor="email">Email *</Label>
-                            <Input
-                              id="email"
-                              name="email"
-                              type="email"
-                              placeholder="seu@email.com"
-                              required
-                              data-testid="input-email"
-                            />
-                          </div>
+                      <form
+                        onSubmit={handleSubmit}
+                        className="space-y-6"
+                        data-netlify="true"
+                        name="contact"
+                        method="POST"
+                      >
+                        <input type="hidden" name="form-name" value="contact" />
+                        <div className="space-y-2">
+                          <Label htmlFor="name">Nome *</Label>
+                          <Input
+                            id="name"
+                            name="name"
+                            placeholder="O seu nome"
+                            required
+                            data-testid="input-name"
+                          />
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           <div className="space-y-2">
-                            <Label htmlFor="phone">Telemóvel</Label>
+                            <Label htmlFor="phone">Telemóvel *</Label>
                             <Input
                               id="phone"
                               name="phone"
                               type="tel"
                               placeholder="912 345 678"
+                              required
+                              maxLength={11}
+                              onChange={handlePhoneChange}
                               data-testid="input-phone"
                             />
                           </div>
@@ -291,7 +292,7 @@ export default function Contact() {
                       Edifício América<br />
                       Rua 1.º de Maio<br />
                       2.º Andar, Sala 212<br />
-                      4785-000 Trofa, Portugal
+                      4785-353 Trofa, Portugal
                     </p>
                     <a
                       href="https://maps.google.com/?q=Trofa,Portugal"

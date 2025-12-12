@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { GraduationCap, Phone, Mail, MapPin } from "lucide-react";
 import { SiInstagram, SiWhatsapp } from "react-icons/si";
+import logo from "@assets/logo-so.png";
 
 const quickLinks = [
   { href: "/", label: "Início" },
@@ -25,9 +26,11 @@ export function Footer() {
         <div className="py-12 lg:py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4" data-testid="link-footer-logo">
-              <div className="p-2 rounded-md bg-accent/20">
-                <GraduationCap className="h-6 w-6 text-accent" />
-              </div>
+              <img
+                src={logo}
+                alt="Diana Pimentel Centro de Explicações"
+                className="h-28 w-auto object-contain"
+              />
               <div className="flex flex-col">
                 <span className="text-lg font-semibold leading-tight">
                   Diana Pimentel

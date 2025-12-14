@@ -47,9 +47,10 @@ export function ChatWindow({ onClose }: ChatWindowProps) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.2 }}
-            className="fixed bottom-4 right-4 z-[55] w-full max-w-md"
+            // Default to a small widget width on mobile; expand to the desktop max width on larger screens
+            className="fixed bottom-4 right-4 z-[55] w-72 sm:w-80 md:w-full md:max-w-md"
         >
-            <Card className="flex flex-col h-[600px] max-h-[80vh] shadow-2xl border-border overflow-hidden">
+                <Card className="flex flex-col h-[60vh] md:h-[600px] max-h-[80vh] shadow-2xl border-border overflow-hidden">
                 {/* Header */}
                 <div className="flex items-center justify-between p-4 bg-primary text-primary-foreground border-b border-primary/20">
                     <div className="flex items-center gap-3">

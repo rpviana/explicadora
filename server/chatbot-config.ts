@@ -98,7 +98,7 @@ export const CHATBOT_CONFIG = {
 
     // Configurações do modelo Gemini
     modelConfig: {
-        model: "gemini-2.5-flash", // Modelo atual suportado pela API v1beta
+        model: "gemini-1.5-flash", // Modelo atual suportado pela API
         temperature: 0.7, // Criatividade moderada (0.0 = muito focado, 1.0 = muito criativo)
         maxOutputTokens: 500, // Limita tamanho da resposta para economizar tokens
         topP: 0.9,

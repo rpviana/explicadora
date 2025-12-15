@@ -10,14 +10,11 @@
   publish = "dist/public"
 
 # Redirect rules for SPA (Single Page Application)
+# All routes fallback to index.html for client-side routing
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-  force = false
-  
-  # Don't redirect API calls or static assets
-  conditions = {Role = ["admin"]}
 
 # Environment variables (configure these in Netlify dashboard)
 # Required variables:

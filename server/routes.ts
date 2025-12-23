@@ -68,9 +68,9 @@ export async function registerRoutes(
 
       // Lista de API keys + modelos (fallback)
       const apiKeys = [
-        { key: process.env.GEMINI_API_KEY_1, model: "gemini-1.5-flash" },
-        { key: process.env.GEMINI_API_KEY_2, model: "gemini-1.5-pro" },
-        { key: process.env.GEMINI_API_KEY_3, model: "gemini-1.5-flash-8b" },
+        { key: process.env.GEMINI_API_KEY_1, model: "gemini-2.0-flash" },
+        { key: process.env.GEMINI_API_KEY_2, model: "gemini-2.5-flash" },
+        { key: process.env.GEMINI_API_KEY_3, model: "gemini-pro-latest" },
       ];
 
       if (!apiKeys.some(k => k.key)) {

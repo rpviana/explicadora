@@ -26,24 +26,28 @@ const galleryImages = [
     category: "space",
     title: "Sala de Estudo Principal",
     description: "Ambiente calmo e profissional para aprendizagem",
+    image: "/images/sala-principal.jpeg",
   },
   {
     id: 3,
     category: "classes",
     title: "Aula Individual",
     description: "Atenção personalizada para cada aluno",
+    image: "/images/aula-individual.jpeg",
   },
   {
     id: 4,
     category: "materials",
     title: "Material Didático",
     description: "Recursos actualizados e organizados",
+    image: "/images/material-didatico.jpeg",
   },
   {
     id: 8,
     category: "space",
     title: "Vista do Edifício",
     description: "Edifício América, localização central",
+    image: "/images/edificio.jpeg",
   },
 ];
 
@@ -131,15 +135,12 @@ export default function Gallery() {
                     onClick={() => setSelectedImage(image.id)}
                     data-testid={`card-gallery-${image.id}`}
                   >
-                    <div className={`aspect-square bg-gradient-to-br ${getGradientColor(image.id)} relative`}>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="text-center p-4">
-                          {image.category === "space" && <Building2 className="h-12 w-12 text-foreground/40 mx-auto mb-2" />}
-                          {image.category === "classes" && <Users className="h-12 w-12 text-foreground/40 mx-auto mb-2" />}
-                          {image.category === "materials" && <BookOpen className="h-12 w-12 text-foreground/40 mx-auto mb-2" />}
-                          <p className="text-sm text-foreground/60">{image.title}</p>
-                        </div>
-                      </div>
+                    <div className="aspect-square relative overflow-hidden">
+                      <img
+                        src={image.image}
+                        alt={image.title}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                      />
                       <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                         <span className="text-primary-foreground font-medium">Ver Detalhes</span>
                       </div>
@@ -202,7 +203,7 @@ export default function Gallery() {
                   </div>
 
                   <a
-                    href="https://maps.google.com/?q=Trofa,Portugal"
+                    href="https://maps.app.goo.gl/jgTZjseAb9MBcNiN8"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -215,7 +216,7 @@ export default function Gallery() {
 
                 <div className="h-64 lg:h-auto bg-muted">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11937.945095750064!2d-8.566094!3d41.3389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd24649c0b9eef85%3A0x500ebbde49036d0!2s4785%20Trofa!5e0!3m2!1spt-PT!2spt!4v1701234567890!5m2!1spt-PT!2spt"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2995.6522115861517!2d-8.563459088436932!3d41.33817547118656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd245f91c5d174fd%3A0x132e2e5b2884a4cc!2sDiana%20Pimentel%20Explica%C3%A7%C3%B5es!5e0!3m2!1spt-PT!2spt!4v1767240846833!5m2!1spt-PT!2spt"
                     width="100%"
                     height="100%"
                     style={{ border: 0, minHeight: "300px" }}
@@ -261,13 +262,12 @@ export default function Gallery() {
                   if (!image) return null;
                   return (
                     <>
-                      <div className={`aspect-video bg-gradient-to-br ${getGradientColor(image.id)} flex items-center justify-center`}>
-                        <div className="text-center">
-                          {image.category === "space" && <Building2 className="h-24 w-24 text-foreground/40 mx-auto mb-4" />}
-                          {image.category === "classes" && <Users className="h-24 w-24 text-foreground/40 mx-auto mb-4" />}
-                          {image.category === "materials" && <BookOpen className="h-24 w-24 text-foreground/40 mx-auto mb-4" />}
-                          <p className="text-lg text-foreground/60">Imagem ilustrativa</p>
-                        </div>
+                      <div className="aspect-video relative overflow-hidden bg-muted">
+                        <img
+                          src={image.image}
+                          alt={image.title}
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                       <CardContent className="p-6">
                         <h3 className="text-xl font-semibold text-foreground mb-2">{image.title}</h3>

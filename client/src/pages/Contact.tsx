@@ -295,7 +295,7 @@ export default function Contact() {
                       4785-353 Trofa, Portugal
                     </p>
                     <a
-                      href="https://maps.google.com/?q=Trofa,Portugal"
+                      href="https://maps.app.goo.gl/jgTZjseAb9MBcNiN8"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -318,8 +318,7 @@ export default function Contact() {
             <Card className="overflow-hidden" data-testid="card-map-embed">
               <div className="h-96">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11937.945095750064!2d-8.566094!3d41.3389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd24649c0b9eef85%3A0x500ebbde49036d0!2s4785%20Trofa!5e0!3m2!1spt-PT!2spt!4v1701234567890!5m2!1spt-PT!2spt"
-                  width="100%"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2995.6522115861517!2d-8.563459088436932!3d41.33817547118656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd245f91c5d174fd%3A0x132e2e5b2884a4cc!2sDiana%20Pimentel%20Explica%C3%A7%C3%B5es!5e0!3m2!1spt-PT!2spt!4v1767240846833!5m2!1spt-PT!2spt" width="100%"
                   height="100%"
                   style={{ border: 0 }}
                   allowFullScreen

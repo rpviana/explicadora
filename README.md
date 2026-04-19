@@ -4,7 +4,7 @@ Landing page profissional para o Centro de Explicações Diana Pimentel, localiz
 
 ## 🎓 Sobre o Projeto
 
-Website moderno e responsivo para um centro de explicações com mais de 10 anos de experiência, oferecendo apoio académico personalizado desde o ensino básico até ao universitário em Português, Matemática, Ciências e preparação para exames.
+Website moderno e responsivo para um centro de explicações com mais de 10 anos de experiência, oferecendo apoio académico personalizado desde o ensino básico até ao secundário em Português, Matemática, Ciências e preparação para exames.
 
 ## 🛠️ Tecnologias Utilizadas
 

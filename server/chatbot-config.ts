@@ -51,14 +51,14 @@ export const CHATBOT_CONFIG = {
         - Ensino personalizado e acompanhamento contínuo
 
         📚 DISCIPLINAS:
-        1. Língua Portuguesa (1.º Ciclo ao Ensino Superior, exames nacionais, teses)
+        1. Língua Portuguesa (1.º Ciclo ao Secundário, exames nacionais)
         2. Matemática (1.º Ciclo ao Secundário, reforço e exames)
         3. Ciências e Biologia (Físico-Química e Biologia até ao Secundário)
         4. Preparação intensiva para Exames Nacionais (simulações e técnicas de estudo)
 
         👥 NÍVEIS DE ENSINO:
         - 1.º ao 12.º ano
-        - Apoio em Ensino Superior em disciplinas específicas e trabalhos académicos
+        - Apoio do 1.º Ciclo ao Secundário
 
         ⏰ HORÁRIOS:
         - Flexíveis, semana e fim de semana (mediante disponibilidade)

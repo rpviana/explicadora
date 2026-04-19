@@ -41,7 +41,7 @@ export function Footer() {
               </div>
             </Link>
             <p className="text-sm text-primary-foreground/70 mb-6 leading-relaxed">
-              Mais de 10 anos a construir sucesso escolar. Apoio personalizado desde o 1.º Ciclo até ao Ensino Superior.
+              Mais de 10 anos a construir sucesso escolar. Apoio personalizado desde o 1.º Ciclo até ao Secundário.
             </p>
             <div className="flex items-center gap-3">
               <a

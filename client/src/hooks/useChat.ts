@@ -29,12 +29,23 @@ export function useChat() {
                 body: JSON.stringify({ message } as ChatMessage),
             });
 
-            if (!response.ok) {
-                const error = await response.json();
-                throw new Error(error.error || "Erro ao enviar mensagem");
+            const raw = await response.text();
+            let payload: any = null;
+            try {
+                payload = raw ? JSON.parse(raw) : null;
+            } catch {
+                payload = null;
             }
 
-            return response.json();
+            if (!response.ok) {
+                throw new Error(payload?.error || "Erro ao enviar mensagem");
+            }
+
+            if (!payload || typeof payload.response !== "string" || typeof payload.timestamp !== "number") {
+                throw new Error("Resposta inválida do servidor");
+            }
+
+            return payload as ChatResponse;
         },
         onMutate: async (message: string) => {
             // Add user message immediately

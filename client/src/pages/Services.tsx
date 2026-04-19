@@ -21,8 +21,8 @@ const services = [
   {
     icon: BookOpen,
     title: "Língua Portuguesa",
-    description: "Especialização completa em Língua Portuguesa, desde o ensino básico até ao nível superior. Apoio na elaboração de teses, dissertações e trabalhos académicos.",
-    levels: ["1.º ao 4.º Ano", "5.º ao 9.º Ano", "Secundário", "Ensino Superior"],
+    description: "Especialização completa em Língua Portuguesa, desde o ensino básico até ao Secundário, com foco em exames e melhoria contínua.",
+    levels: ["1.º ao 4.º Ano", "5.º ao 9.º Ano", "Secundário"],
     color: "from-blue-500/10 to-indigo-500/10",
     iconColor: "text-blue-600",
   },
@@ -45,8 +45,8 @@ const services = [
   {
     icon: FileCheck,
     title: "Preparação para Exames",
-    description: "Treino intensivo e focado para Exames Nacionais e Frequências universitárias. Simulações de exame e técnicas de gestão de tempo.",
-    levels: ["9.º Ano", "Secundário", "Ensino Superior"],
+    description: "Treino intensivo e focado para Exames Nacionais. Simulações de exame e técnicas de gestão de tempo.",
+    levels: ["9.º Ano", "Secundário"],
     color: "from-amber-500/10 to-orange-500/10",
     iconColor: "text-amber-600",
   },
@@ -102,7 +102,7 @@ export default function Services() {
             </h1>
             <p className="text-lg text-primary-foreground/80 leading-relaxed">
               Oferecemos explicações personalizadas em diversas disciplinas,
-              desde o 1.º Ciclo até ao Ensino Superior.
+              desde o 1.º Ciclo até ao Secundário.
             </p>
           </AnimatedSection>
         </div>

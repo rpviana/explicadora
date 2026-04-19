@@ -17,7 +17,7 @@ const services = [
   {
     icon: BookOpen,
     title: "Língua Portuguesa",
-    description: "Especialização completa desde o Básico até ao Ensino Superior e Teses.",
+    description: "Especialização completa desde o Básico até ao Secundário.",
     href: "/servicos",
   },
   {
@@ -55,8 +55,8 @@ const testimonials = [
   },
   {
     name: "Ana Costa",
-    role: "Aluna Universitária",
-    content: "Excelente apoio na elaboração da minha tese. Profissionalismo e atenção ao detalhe impecáveis.",
+    role: "Aluna do Secundário",
+    content: "Excelente apoio na preparação para exames. Profissionalismo e atenção ao detalhe impecáveis.",
     rating: 5,
   },
 ];
@@ -111,7 +111,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              Apoio personalizado desde o 1.º Ciclo até ao Ensino Superior.
+              Apoio personalizado desde o 1.º Ciclo até ao Secundário.
               Especialistas em Português, Matemática e Ciências.
             </motion.p>
 
